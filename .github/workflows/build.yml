@@ -6,6 +6,7 @@ name: "Build"
 #  given Python driver version (rethinkdb-python < 2.5).
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -13,8 +14,8 @@ on:
   pull_request:
     branches:
       - "*"
-  schedule:
-    - cron: '00 8 * * 1'
+  # schedule:
+  #   - cron: '00 8 * * 1'
 
 jobs:
   # Preflight runs every test and assertion that has no dependency on the build
